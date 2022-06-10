@@ -1,0 +1,47 @@
+
+
+namespace = cot_monarch_system
+
+# System and events to improve monarchs and heirs
+
+# Enables the new monarch system events
+country_event = {
+	id = cot_monarch_system.1
+	title = cot_monarch_system.1.t
+	desc = cot_monarch_system.1.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		has_idea = civil_servants
+		NOT = { has_country_flag = cot_monarch_system_active }
+	}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "cot_monarch_system.1.1"
+		set_country_flag = cot_monarch_system_active    
+	}
+}
+# Disables the new monarch system events
+country_event = {
+	
+	id = cot_monarch_system.2
+	title = cot_monarch_system.2.t
+	desc = cot_monarch_system.2.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = cot_monarch_system_active
+		NOT = { has_idea = civil_servants }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "cot_monarch_system.2.1"
+		clr_country_flag = cot_monarch_system_active
+	}
+}
